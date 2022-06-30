@@ -29,11 +29,11 @@ pipeline {
 		stage('Code Analysis') {
             steps {
 			 script {
-          scannerHome = tool 'sonar-scanner'
+          scannerHome = tool 'sonar-scaner'
         }
 				withSonarQubeEnv('MySonarQubeServer')
 				{
-				sh "${scannerHome}/bin/sonar-scanner"
+				sh "${scannerHome}/bin/sonar-scaner"
 				}
 			}
 		}
