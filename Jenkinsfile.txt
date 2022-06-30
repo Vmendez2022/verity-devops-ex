@@ -50,7 +50,7 @@ pipeline {
             }
         }
 		//Code ends for stage Unit Test
-                //Code start for Code Coverege
+                // Code start for Code Coverage
                   stage('Code Coverage') {
                      steps{ 
                      step([
