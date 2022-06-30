@@ -50,9 +50,9 @@ pipeline {
             }
         }
 		//Code ends for stage Unit Test
-                //Code start for code coverege
+                //Code start for Code Coverege
                   stage('Code Coverage') {
-                     steps 
+                     steps{ 
                      step([
                         $Class: 'JacocoPublisher'
                      ])
