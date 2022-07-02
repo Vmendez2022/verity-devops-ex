@@ -33,14 +33,13 @@ pipeline {
 		script {
           scannerHome = tool 'sonar-scanner'
         }
-				withSonarQubeEnv('My Sonar Qube Server')
+				withSonarQubeEnv('MySonarQubeServer')
 				{
 				sh "${scannerHome}/bin/sonar-scanner"
 				}
 			}
 		}
 	//Code ends for stage Code Analysis
-
 
     }
 }
