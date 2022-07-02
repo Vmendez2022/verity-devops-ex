@@ -33,34 +33,14 @@ pipeline {
 		script {
           scannerHome = tool 'sonar-scanner'
         }
-				withSonarQubeEnv('MySonarQubeServer')
+				withSonarQubeEnv('My Sonar Qube Server')
 				{
 				sh "${scannerHome}/bin/sonar-scanner"
 				}
 			}
 		}
 	//Code ends for stage Code Analysis
-	//Code starts for stage Unit Test
-        stage('Unit Test') {
-            steps {
-                sh 'mvn test'
-            }	
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-	//Code ends for stage Unit Test	
 
-        // Code start for Code Coverage
-        stage('Code Coverage'){
-           steps{
-               step([
-                  $class: 'jacoco:Publiser'
-               ])
-           }  
-        }
-        // Code ends for Code Coverage
+
     }
 }
