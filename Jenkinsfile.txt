@@ -57,7 +57,7 @@ pipeline {
         stage('Code Coverage'){
            steps{
                step([
-                  $class: 'JacocoPublisher'
+                  $class: 'jacoco:Publiser'
                ])
            }  
         }
